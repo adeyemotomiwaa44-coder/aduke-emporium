@@ -1,0 +1,25 @@
+{
+  "name": "HeroImage",
+  "type": "object",
+  "properties": {
+    "image_url": {
+      "type": "string",
+      "description": "URL of the hero image"
+    },
+    "title": {
+      "type": "string",
+      "description": "Slide title text"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Slide subtitle text"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order (lower = first)"
+    }
+  },
+  "required": [
+    "image_url"
+  ]
+}
