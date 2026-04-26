@@ -1,0 +1,54 @@
+{
+  "name": "StoreSetting",
+  "type": "object",
+  "properties": {
+    "bank_name": {
+      "type": "string",
+      "description": "Bank name for transfers"
+    },
+    "account_number": {
+      "type": "string",
+      "description": "Bank account number"
+    },
+    "account_name": {
+      "type": "string",
+      "description": "Account holder name"
+    },
+    "delivery_locations": {
+      "type": "array",
+      "description": "Available delivery locations with fees",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "fee": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "pickup_address": {
+      "type": "string",
+      "description": "Pick-up address for in-store collection"
+    },
+    "support_phone": {
+      "type": "string"
+    },
+    "whatsapp_number": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "telegram_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "bank_name",
+    "account_number",
+    "account_name"
+  ]
+}
