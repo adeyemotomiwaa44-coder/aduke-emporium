@@ -1,0 +1,92 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "customer_name": {
+      "type": "string",
+      "description": "Customer full name"
+    },
+    "customer_phone": {
+      "type": "string",
+      "description": "Customer phone number"
+    },
+    "customer_address": {
+      "type": "string",
+      "description": "Delivery address"
+    },
+    "location": {
+      "type": "string",
+      "description": "Delivery location area"
+    },
+    "shipping_method": {
+      "type": "string",
+      "enum": [
+        "stockpile",
+        "home_delivery",
+        "pickup",
+        "waybill"
+      ],
+      "description": "Shipping method chosen by customer"
+    },
+    "items": {
+      "type": "array",
+      "description": "Cart items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "image_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal before delivery"
+    },
+    "delivery_fee": {
+      "type": "number",
+      "description": "Delivery fee"
+    },
+    "total": {
+      "type": "number",
+      "description": "Total amount"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Order status"
+    },
+    "transfer_reference": {
+      "type": "string",
+      "description": "Bank transfer reference"
+    }
+  },
+  "required": [
+    "customer_name",
+    "customer_phone",
+    "customer_address",
+    "shipping_method",
+    "items",
+    "total"
+  ]
+}
